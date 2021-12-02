@@ -35,6 +35,20 @@ export class SulfurasUpdate implements ItemUpdate {
     }
 }
 
+export class ConjuredUpdate implements ItemUpdate {
+    update(item: Item) : void {
+        item.sellIn -= 1
+        if (item.quality > 0) {
+            if (item.sellIn >= 0) {
+                item.quality -= 2
+            }
+            else {
+                item.quality -= 4
+            }
+        }
+    }
+}
+
 export class DefaultUpdate implements ItemUpdate {
     update(item: Item): void {
         item.sellIn -= 1

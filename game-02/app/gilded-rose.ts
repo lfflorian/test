@@ -1,4 +1,4 @@
-import { ItemUpdate, AgedBriedUpdate, BackstagePassesUpdate, SulfurasUpdate, DefaultUpdate } from './items-update'
+import { ItemUpdate, AgedBriedUpdate, BackstagePassesUpdate, SulfurasUpdate, DefaultUpdate, ConjuredUpdate } from './items-update'
 
 export class Item {
     name: string;
@@ -33,6 +33,10 @@ export class GildedRose {
                     break;
                 case 'Sulfuras, Hand of Ragnaros':
                     met = new SulfurasUpdate()
+                    met.update(this.items[i])
+                    break;
+                case 'Conjured':
+                    met = new ConjuredUpdate()
                     met.update(this.items[i])
                     break;
                 default:
