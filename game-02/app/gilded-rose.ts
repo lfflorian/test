@@ -20,8 +20,8 @@ export class GildedRose {
     }
 
     updateQuality() {
+        let met : ItemUpdate;
         for (let i = 0; i < this.items.length; i++) {
-            let met : ItemUpdate;
             switch (this.items[i].name) {
                 case 'Aged Brie':
                     met = new AgedBriedUpdate()
